@@ -124,6 +124,9 @@ class acf_field_gravity_forms extends acf_field {
     $field['type'] = 'select';
     ?>
       <select name="<?php echo $field['name'];?>" id="<?php echo $field['name'];?>">
+        <?php if($field['allow_null']) { ?>
+		      <option value=""<?php echo $selected;?>></option>
+        <?php } ?>
         <?php 
           foreach ($field['choices'] as $key => $value) : 
             $selected = '';
